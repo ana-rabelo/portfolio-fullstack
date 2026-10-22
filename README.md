@@ -24,4 +24,4 @@ As experiências e a formação foram resumidas a partir do currículo de Ana Pa
 
 O deploy é feito automaticamente pelo workflow em `.github/workflows/pages.yml` após cada push para `main`. Em **Settings → Pages**, a fonte precisa estar configurada como **GitHub Actions**.
 
-O design foi inspirado na [referência de Isabella Popescu / QClay no Dribbble](https://dribbble.com/shots/25456502-Website-Designer-Portfolio-Website), com composição, conteúdo e elementos gráficos próprios.
+O design usa como inspiração a [página de trabalhos de Gabriel Valdivia](https://www.gabrielvaldivia.com/work), com composição, conteúdo e prévias gráficas próprias.

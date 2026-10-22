@@ -3,15 +3,14 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="#inicio" aria-label="Ana Paula Rabelo, voltar ao início">
-      <span class="brand-mark" aria-hidden="true">a<span>.</span></span>
-      <span>Ana Paula<br />Rabelo</span>
+      <span>Ana Paula Rabelo</span>
     </a>
     <button class="menu-toggle" type="button" [attr.aria-expanded]="menuOpen()" aria-controls="main-nav" aria-label="Abrir ou fechar menu" (click)="menuOpen.set(!menuOpen())"><span></span><span></span></button>
     <nav id="main-nav" class="main-nav" [class.is-open]="menuOpen()" aria-label="Navegação principal">
       <a href="#projetos" (click)="menuOpen.set(false)">Projetos</a>
       <a href="#experiencia" (click)="menuOpen.set(false)">Experiência</a>
       <a href="#sobre" (click)="menuOpen.set(false)">Sobre</a>
-      <a class="nav-contact" href="#contato" (click)="menuOpen.set(false)">Contato <span aria-hidden="true">↗</span></a>
+      <a class="nav-contact" href="#contato" (click)="menuOpen.set(false)">Contato</a>
     </nav>
   </div>
 </header>
@@ -20,32 +19,24 @@
   <section class="hero" id="inicio" aria-labelledby="hero-title">
     <div class="container hero-grid">
       <div class="hero-content">
-        <div class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Desenvolvedora full-stack · São Luís, MA</div>
-        <h1 id="hero-title">Tecnologia com <em>propósito.</em><br />Experiências com <span class="highlight">impacto.</span></h1>
-        <p class="hero-lead">Oi, eu sou a Ana Paula. Transformo ideias em interfaces intuitivas, APIs sólidas e soluções que fazem sentido para as pessoas.</p>
+        <div class="eyebrow">Desenvolvedora full-stack · São Luís, MA</div>
+        <h1 id="hero-title">Oi, sou a Ana Paula.<br />Desenvolvo para web.</h1>
+        <p class="hero-lead">Transformo ideias em interfaces intuitivas, APIs sólidas e soluções que fazem sentido para as pessoas.</p>
         <div class="hero-actions">
-          <a class="button button-dark" href="#projetos">Explorar projetos <span aria-hidden="true">↗</span></a>
+          <a class="button button-dark" href="#projetos">Ver projetos <span aria-hidden="true">↗</span></a>
           <a class="inline-link" href="mailto:prabelo79@gmail.com">Vamos conversar <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="hero-footnote"><span class="scroll-line" aria-hidden="true"></span> Um pouco do que construo <span aria-hidden="true">↓</span></div>
       </div>
       <div class="hero-visual">
-        <div class="portrait-backdrop" aria-hidden="true"></div>
         <div class="portrait-frame"><img src="https://avatars.githubusercontent.com/u/50804149?v=4" alt="Retrato de Ana Paula Rabelo" width="600" height="600" fetchpriority="high" /></div>
-        <div class="photo-sticker" aria-hidden="true"><span>ana.</span><small>criando o próximo<br />capítulo →</small></div>
-        <div class="orbit-label orbit-label-top" aria-hidden="true">DEV / DESIGN / DADOS</div>
-        <div class="orbit-label orbit-label-bottom" aria-hidden="true">01 — 08</div>
       </div>
     </div>
-    <div class="hero-index container" aria-label="Áreas de atuação"><span>01 / Front-end</span><span>02 / Back-end</span><span>03 / Dados</span><span>04 / Arquitetura</span></div>
   </section>
-
-  <section class="intro-band" aria-label="Apresentação"><div class="container intro-inner"><p>Desenvolvimento de ponta a ponta, <em>com atenção a cada detalhe.</em></p><span class="asterisk" aria-hidden="true">✳</span></div></section>
 
   <section class="section projects-section" id="projetos" aria-labelledby="projects-title">
     <div class="container">
       <div class="section-heading">
-        <div><p class="section-kicker"><span>01</span> / Projetos selecionados</p><h2 id="projects-title">Ideias que viraram <em>código.</em></h2></div>
+        <div><p class="section-kicker">01 / Trabalho selecionado</p><h2 id="projects-title">Projetos.</h2></div>
         <p>Uma seleção de projetos em web, APIs, dados e arquitetura. Cada um é uma oportunidade de aprender e criar algo melhor.</p>
       </div>
       <div class="filter-bar" role="group" aria-label="Filtrar projetos por área">
@@ -55,11 +46,15 @@
       </div>
       <div class="project-grid" aria-live="polite">
         @for (project of visibleProjects(); track project.id; let i = $index) {
-          <article class="project-card" [class.project-featured]="project.id === 'insis'" [attr.data-project]="project.id" animate.enter="card-enter">
+          <article class="project-card" [attr.data-project]="project.id" animate.enter="card-enter">
             <div class="project-art" aria-hidden="true">
-              <span class="art-code">{{ project.id === 'insis' ? 'INSIS / 01' : ('0' + (i + 1)).slice(-2) }}</span>
-              <span class="art-shape art-shape-one"></span><span class="art-shape art-shape-two"></span><span class="art-shape art-shape-three"></span>
-              <span class="art-category">{{ project.category }}</span>
+              <div class="preview-device">
+                <div class="preview-bar"><span></span><span></span><span></span></div>
+                <div class="preview-layout">
+                  <div class="preview-sidebar"><span></span><span></span><span></span><span></span></div>
+                  <div class="preview-content"><strong>{{ project.title }}</strong><span></span><span></span><div class="preview-panels"><i></i><i></i><i></i></div></div>
+                </div>
+              </div>
             </div>
             <div class="project-body">
               <div class="project-overline"><span>{{ project.category }}</span><span>{{ ('0' + (i + 1)).slice(-2) }} / 08</span></div>
