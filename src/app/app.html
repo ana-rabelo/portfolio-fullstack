@@ -1,0 +1,125 @@
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#inicio" aria-label="Ana Paula Rabelo, voltar ao início">
+      <span class="brand-mark" aria-hidden="true">a<span>.</span></span>
+      <span>Ana Paula<br />Rabelo</span>
+    </a>
+    <button class="menu-toggle" type="button" [attr.aria-expanded]="menuOpen()" aria-controls="main-nav" aria-label="Abrir ou fechar menu" (click)="menuOpen.set(!menuOpen())"><span></span><span></span></button>
+    <nav id="main-nav" class="main-nav" [class.is-open]="menuOpen()" aria-label="Navegação principal">
+      <a href="#projetos" (click)="menuOpen.set(false)">Projetos</a>
+      <a href="#experiencia" (click)="menuOpen.set(false)">Experiência</a>
+      <a href="#sobre" (click)="menuOpen.set(false)">Sobre</a>
+      <a class="nav-contact" href="#contato" (click)="menuOpen.set(false)">Contato <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="hero" id="inicio" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Desenvolvedora full-stack · São Luís, MA</div>
+        <h1 id="hero-title">Tecnologia com <em>propósito.</em><br />Experiências com <span class="highlight">impacto.</span></h1>
+        <p class="hero-lead">Oi, eu sou a Ana Paula. Transformo ideias em interfaces intuitivas, APIs sólidas e soluções que fazem sentido para as pessoas.</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#projetos">Explorar projetos <span aria-hidden="true">↗</span></a>
+          <a class="inline-link" href="mailto:prabelo79@gmail.com">Vamos conversar <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-footnote"><span class="scroll-line" aria-hidden="true"></span> Um pouco do que construo <span aria-hidden="true">↓</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="portrait-backdrop" aria-hidden="true"></div>
+        <div class="portrait-frame"><img src="https://avatars.githubusercontent.com/u/50804149?v=4" alt="Retrato de Ana Paula Rabelo" width="600" height="600" fetchpriority="high" /></div>
+        <div class="photo-sticker" aria-hidden="true"><span>ana.</span><small>criando o próximo<br />capítulo →</small></div>
+        <div class="orbit-label orbit-label-top" aria-hidden="true">DEV / DESIGN / DADOS</div>
+        <div class="orbit-label orbit-label-bottom" aria-hidden="true">01 — 08</div>
+      </div>
+    </div>
+    <div class="hero-index container" aria-label="Áreas de atuação"><span>01 / Front-end</span><span>02 / Back-end</span><span>03 / Dados</span><span>04 / Arquitetura</span></div>
+  </section>
+
+  <section class="intro-band" aria-label="Apresentação"><div class="container intro-inner"><p>Desenvolvimento de ponta a ponta, <em>com atenção a cada detalhe.</em></p><span class="asterisk" aria-hidden="true">✳</span></div></section>
+
+  <section class="section projects-section" id="projetos" aria-labelledby="projects-title">
+    <div class="container">
+      <div class="section-heading">
+        <div><p class="section-kicker"><span>01</span> / Projetos selecionados</p><h2 id="projects-title">Ideias que viraram <em>código.</em></h2></div>
+        <p>Uma seleção de projetos em web, APIs, dados e arquitetura. Cada um é uma oportunidade de aprender e criar algo melhor.</p>
+      </div>
+      <div class="filter-bar" role="group" aria-label="Filtrar projetos por área">
+        @for (filter of filters; track filter) {
+          <button type="button" [class.active]="selectedFilter() === filter" [attr.aria-pressed]="selectedFilter() === filter" (click)="selectFilter(filter)">{{ filter }}</button>
+        }
+      </div>
+      <div class="project-grid" aria-live="polite">
+        @for (project of visibleProjects(); track project.id; let i = $index) {
+          <article class="project-card" [class.project-featured]="project.id === 'insis'" [attr.data-project]="project.id" animate.enter="card-enter">
+            <div class="project-art" aria-hidden="true">
+              <span class="art-code">{{ project.id === 'insis' ? 'INSIS / 01' : ('0' + (i + 1)).slice(-2) }}</span>
+              <span class="art-shape art-shape-one"></span><span class="art-shape art-shape-two"></span><span class="art-shape art-shape-three"></span>
+              <span class="art-category">{{ project.category }}</span>
+            </div>
+            <div class="project-body">
+              <div class="project-overline"><span>{{ project.category }}</span><span>{{ ('0' + (i + 1)).slice(-2) }} / 08</span></div>
+              <h3>{{ project.title }}</h3>
+              <p>{{ project.description }}</p>
+              <div class="project-bottom">
+                <div class="tag-list">@for (tag of project.tags; track tag) { <span>{{ tag }}</span> }</div>
+                @if (project.url) {
+                  <a class="project-arrow" [href]="project.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'Ver repositório de ' + project.title" title="Ver repositório no GitHub">↗</a>
+                } @else {
+                  <span class="private-label">Estudo de caso</span>
+                }
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+      <a class="all-projects-link" href="https://github.com/ana-rabelo?tab=repositories" target="_blank" rel="noopener noreferrer">Ver todos os repositórios no GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+  <section class="section experience-section" id="experiencia" aria-labelledby="experience-title">
+    <div class="container experience-layout">
+      <div class="experience-intro">
+        <p class="section-kicker"><span>02</span> / Trajetória</p>
+        <h2 id="experience-title">Experiência que conecta <em>produto e tecnologia.</em></h2>
+        <p>Construindo soluções em ambientes reais, com curiosidade para entender o problema antes de escrever a primeira linha de código.</p>
+        <div class="experience-decoration" aria-hidden="true">a<span>.</span></div>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item"><div class="timeline-date">ABR 2025 — ATUAL</div><div><h3>Desenvolvedora Full-stack Júnior</h3><p class="timeline-company">Citiesoft</p><p>Interfaces em Angular e TypeScript, APIs REST em Java e Spring Boot, modelagem com PostgreSQL e trabalho com Docker, AWS, Azure e testes automatizados.</p></div></article>
+        <article class="timeline-item"><div class="timeline-date">ABR — SET 2025</div><div><h3>Analista de Suporte</h3><p class="timeline-company">Citiesoft</p><p>Atendimento e resolução de incidentes, com organização de chamados em GLPI e práticas de ITIL.</p></div></article>
+        <article class="timeline-item"><div class="timeline-date">SET 2024 — MAR 2025</div><div><h3>Estagiária de Operações</h3><p class="timeline-company">Vale S/A</p><p>Análise de indicadores operacionais com SQL e Python; criação de dashboards no Power BI e Excel para apoiar decisões.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about-section" id="sobre" aria-labelledby="about-title">
+    <div class="container about-layout">
+      <div class="about-main">
+        <p class="section-kicker"><span>03</span> / Sobre mim</p>
+        <h2 id="about-title">Entre lógica e sensibilidade, encontro <em>boas soluções.</em></h2>
+        <p>Sou desenvolvedora full-stack com formação em Sistemas de Informação e mestrado em Engenharia de Software. Gosto de unir a estrutura do back-end à clareza de interfaces que as pessoas gostam de usar.</p>
+        <p>Minha trajetória também passa por análise de dados, pesquisa em visão computacional e experiências em equipes multidisciplinares.</p>
+      </div>
+      <div class="about-aside">
+        <div class="info-block"><span class="info-number">01 / Formação</span><h3>Mestrado em Engenharia de Software</h3><p>ISEP, Porto · Concluído em 2025</p><h3>Bacharelado em Sistemas de Informação</h3><p>IFMA · Concluído em 2024</p></div>
+        <div class="info-block"><span class="info-number">02 / Ferramentas</span><div class="skill-cloud"><span>Angular</span><span>TypeScript</span><span>Java</span><span>Spring Boot</span><span>Python</span><span>SQL</span><span>PostgreSQL</span><span>Docker</span><span>AWS</span><span>Power BI</span></div></div>
+      </div>
+    </div>
+    <div class="container research-strip"><div><span class="section-kicker">Pesquisa & dados</span><h3>Aprendizado também fora do código de produto.</h3></div><p>Projetos de visão computacional aplicados à histopatologia animal e à classificação de carga de caminhões, com modelos VGG-16 e MobileNetV2.</p></div>
+  </section>
+
+  <section class="contact-section" id="contato" aria-labelledby="contact-title">
+    <div class="container contact-inner">
+      <p class="section-kicker"><span>04</span> / Vamos conversar?</p>
+      <div class="contact-grid"><h2 id="contact-title">Tem uma ideia?<br /><em>Vamos construir juntos.</em></h2><div class="contact-side"><p>Estou aberta a boas conversas, colaborações e novos desafios. Escreva e vamos dar o primeiro passo.</p><a class="contact-email" href="mailto:prabelo79@gmail.com">prabelo79@gmail.com <span aria-hidden="true">↗</span></a></div></div>
+      <div class="contact-links"><a href="https://www.linkedin.com/in/ana-paula-de-freitas/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/ana-rabelo" target="_blank" rel="noopener noreferrer">GitHub ↗</a><span>São Luís, Maranhão · Brasil</span></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="container footer-inner"><span>© {{ year }} Ana Paula Rabelo</span><span>Feito com intenção, código e café <span aria-hidden="true">✳</span></span><a href="#inicio">Voltar ao topo ↑</a></div></footer>
