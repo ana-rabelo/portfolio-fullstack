@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, HostListener, afterNextRender, computed, signal, viewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, HostListener, computed, signal, viewChild } from '@angular/core';
 import { carouselEdges } from './carousel';
 import { partitionProjects, projects, type ProjectFilter } from './projects';
 
@@ -14,12 +14,8 @@ export class App {
   protected readonly menuOpen = signal(false);
   protected readonly groupedProjects = computed(() => partitionProjects(projects, this.selectedFilter()));
   protected readonly carouselTrack = viewChild<ElementRef<HTMLDivElement>>('carouselTrack');
-  protected readonly carouselState = signal({ previous: false, next: false });
+  protected readonly carouselState = signal({ previous: false, next: true });
   protected readonly year = new Date().getFullYear();
-
-  constructor() {
-    afterNextRender(() => this.updateCarouselEdges());
-  }
 
   protected selectFilter(filter: ProjectFilter): void {
     this.selectedFilter.set(filter);
