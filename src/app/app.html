@@ -45,7 +45,7 @@
       <div class="project-grid" aria-live="polite">
         @for (project of visibleProjects(); track project.id; let i = $index) {
           <article class="project-card" [attr.data-project]="project.id" animate.enter="card-enter">
-            <div class="project-art" [class.has-preview]="project.preview" [attr.aria-label]="project.preview ? 'Ilustração conceitual de ' + project.title : null" role="img">
+            <div class="project-art" [class.has-preview]="project.preview" [attr.aria-label]="project.preview ? 'Ilustração conceitual de ' + project.title : null" [attr.role]="project.preview ? 'img' : null" [attr.aria-hidden]="project.preview ? null : true">
               @if (project.preview) {
                 <div class="device" [class.device-desktop]="project.device === 'desktop'" [class.device-tablet]="project.device === 'tablet'" [class.device-phone]="project.device === 'phone'">
                   <img [src]="project.preview" alt="" loading="lazy" width="960" height="600" />
