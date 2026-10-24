@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-label="Painel conceitual de apoio legislativo">
+  <rect width="960" height="600" fill="#f6f8f7"/>
+  <rect width="960" height="56" fill="#163c37"/>
+  <circle cx="30" cy="28" r="10" fill="#b5d2ba"/>
+  <text x="52" y="35" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#fff">Apoio Legislativo</text>
+  <text x="760" y="34" font-family="Arial,sans-serif" font-size="13" fill="#d8e7dc">Painel público</text>
+  <rect x="0" y="56" width="202" height="544" fill="#fff"/>
+  <rect x="18" y="90" width="166" height="38" rx="8" fill="#e9f1ec"/>
+  <text x="35" y="115" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#245246">Visão geral</text>
+  <text x="35" y="168" font-family="Arial,sans-serif" font-size="14" fill="#63746c">Matérias</text>
+  <text x="35" y="212" font-family="Arial,sans-serif" font-size="14" fill="#63746c">Sessões</text>
+  <text x="35" y="256" font-family="Arial,sans-serif" font-size="14" fill="#63746c">Comissões</text>
+  <text x="35" y="300" font-family="Arial,sans-serif" font-size="14" fill="#63746c">Relatórios</text>
+  <text x="240" y="108" font-family="Arial,sans-serif" font-size="15" fill="#788a80">Visão geral / Atividade</text>
+  <text x="240" y="154" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#203b34">Acompanhamento legislativo</text>
+  <rect x="240" y="184" width="208" height="112" rx="13" fill="#fff"/>
+  <rect x="465" y="184" width="208" height="112" rx="13" fill="#fff"/>
+  <rect x="690" y="184" width="228" height="112" rx="13" fill="#fff"/>
+  <text x="260" y="215" font-family="Arial,sans-serif" font-size="14" fill="#7d9185">Matérias em tramitação</text>
+  <text x="260" y="268" font-family="Arial,sans-serif" font-size="38" font-weight="700" fill="#224c40">128</text>
+  <text x="485" y="215" font-family="Arial,sans-serif" font-size="14" fill="#7d9185">Sessões agendadas</text>
+  <text x="485" y="268" font-family="Arial,sans-serif" font-size="38" font-weight="700" fill="#224c40">06</text>
+  <text x="710" y="215" font-family="Arial,sans-serif" font-size="14" fill="#7d9185">Comissões ativas</text>
+  <text x="710" y="268" font-family="Arial,sans-serif" font-size="38" font-weight="700" fill="#224c40">12</text>
+  <rect x="240" y="320" width="678" height="236" rx="13" fill="#fff"/>
+  <text x="262" y="358" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#203b34">Atividade recente</text>
+  <path d="M262 379H896M262 429H896M262 479H896" stroke="#e9eeeb"/>
+  <circle cx="279" cy="406" r="7" fill="#70a98b"/><text x="301" y="411" font-family="Arial,sans-serif" font-size="14" fill="#334c40">Matéria encaminhada para análise</text><text x="787" y="411" font-family="Arial,sans-serif" font-size="12" fill="#91a198">Hoje</text>
+  <circle cx="279" cy="456" r="7" fill="#9bbda7"/><text x="301" y="461" font-family="Arial,sans-serif" font-size="14" fill="#334c40">Sessão plenária registrada</text><text x="782" y="461" font-family="Arial,sans-serif" font-size="12" fill="#91a198">Ontem</text>
+  <circle cx="279" cy="506" r="7" fill="#c0d7c6"/><text x="301" y="511" font-family="Arial,sans-serif" font-size="14" fill="#334c40">Relatório disponibilizado</text><text x="778" y="511" font-family="Arial,sans-serif" font-size="12" fill="#91a198">Esta semana</text>
+</svg>

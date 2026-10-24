@@ -9,24 +9,53 @@ export interface Project {
   tags: string[];
   url?: string;
   private?: boolean;
+  status?: 'production' | 'case-study';
+  preview?: string;
+  device?: 'desktop' | 'tablet' | 'phone';
 }
 
 export const projects: Project[] = [
+  {
+    id: 'legislativo',
+    title: 'Sistema de Apoio Legislativo',
+    category: 'Web',
+    description: 'Plataforma para consulta e acompanhamento de matérias, sessões e atividades legislativas.',
+    tags: ['Gestão legislativa', 'Portal web'],
+    url: 'https://alemalegis.al.ma.leg.br/',
+    status: 'production',
+    preview: 'previews/legislativo.svg',
+    device: 'desktop'
+  },
+  {
+    id: 'diarias',
+    title: 'Sistema de Diárias',
+    category: 'Web',
+    description: 'Fluxos digitais para solicitação, acompanhamento e prestação de contas de viagens institucionais.',
+    tags: ['Fluxos de trabalho', 'Gestão pública'],
+    private: true,
+    status: 'production',
+    preview: 'previews/diarias.png',
+    device: 'tablet'
+  },
+  {
+    id: 'ponto',
+    title: 'Sistema de Ponto Eletrônico',
+    category: 'Web',
+    description: 'Registro e acompanhamento de jornadas, com visão clara das marcações e do histórico.',
+    tags: ['Jornada', 'Gestão de pessoas'],
+    private: true,
+    status: 'production',
+    preview: 'previews/ponto.png',
+    device: 'phone'
+  },
   {
     id: 'insis',
     title: 'INSIS Project',
     category: 'Arquitetura',
     description: 'Estudo acadêmico de evolução de um sistema monolítico para serviços de avaliações, produtos e votos, explorando CQRS, eventos e mensageria.',
     tags: ['Java', 'Spring Boot', 'CQRS', 'RabbitMQ'],
-    private: true
-  },
-  {
-    id: 'chemistry',
-    title: 'Chemistry Controle de Estoque',
-    category: 'Web',
-    description: 'Sistema para organizar estoque e requisições dos laboratórios de Química do IFMA.',
-    tags: ['Spring Boot', 'MySQL', 'JavaScript'],
-    url: 'https://github.com/ana-rabelo/ChemistryControleDeEstoque'
+    private: true,
+    status: 'case-study'
   },
   {
     id: 'imobiliaria',
