@@ -39,9 +39,6 @@ h1 { max-width: 930px; margin-bottom: 30px; font-size: clamp(58px, 6.3vw, 100px)
 .button-dark:hover { background: #fff; color: #111; }
 .inline-link { border-bottom: 1px solid #bbb; padding-bottom: 5px; }
 .inline-link:hover { border-color: #111; }
-.hero-mark { display: flex; flex-direction: column; justify-content: space-between; width: 100%; max-width: 440px; min-height: 360px; justify-self: end; padding: 27px; border-radius: 28px; background: #f4f3f0; }
-.hero-mark span { font-size: clamp(96px, 15vw, 210px); font-weight: 500; line-height: .85; letter-spacing: -.12em; }
-.hero-mark small { align-self: flex-end; color: #666; font-size: 13px; line-height: 1.5; text-align: right; }
 
 .section { padding-block: 106px; }
 .projects-section { padding-top: 40px; }
@@ -56,44 +53,25 @@ h1 { max-width: 930px; margin-bottom: 30px; font-size: clamp(58px, 6.3vw, 100px)
 .filter-bar button.active::after { content: ""; position: absolute; right: 0; bottom: -1px; left: 0; height: 1px; background: #111; }
 .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 60px 26px; }
 .project-card { min-width: 0; }
-.project-art { --accent: #5b6a7c; display: grid; place-items: center; overflow: hidden; aspect-ratio: 1 / 1; border-radius: 27px; background: #f3f4f5; }
+.project-art { display: grid; place-items: center; overflow: hidden; aspect-ratio: 1 / 1; border-radius: 27px; background: #f3f4f5; }
 .project-art.has-preview { position: relative; padding: 10%; }
+.project-art.has-photo { padding: 0; }
+.project-photo { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.project-card:hover .project-photo { transform: scale(1.035); }
 .project-card[data-project="legislativo"] .project-art { background: #eaf0ec; }
 .project-card[data-project="diarias"] .project-art { background: #eceaf4; }
 .project-card[data-project="ponto"] .project-art { background: #e8eff4; }
 .device { position: relative; overflow: hidden; background: #fff; box-shadow: 0 24px 38px #1723232b, 0 4px 12px #17232316; transition: transform .4s ease, box-shadow .4s ease; }
 .device img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .device-desktop { width: 100%; aspect-ratio: 16 / 10; border: 8px solid #252b2c; border-bottom-width: 13px; border-radius: 12px 12px 5px 5px; transform: rotate(-5deg) translateY(-2%); }
+.project-card[data-project="legislativo"] .device-desktop { aspect-ratio: 2 / 1; }
 .device-desktop::after { content: ""; position: absolute; bottom: -13px; left: 42%; width: 16%; height: 5px; border-radius: 5px; background: #4c5354; }
 .device-tablet { width: 87%; aspect-ratio: 4 / 3; border: 10px solid #2a2b34; border-radius: 23px; transform: rotate(5deg) translateY(2%); }
-.device-phone { width: 48%; aspect-ratio: 9 / 16; border: 10px solid #202a30; border-radius: 34px; transform: rotate(-8deg) translateY(1%); }
+.device-phone { width: 55%; aspect-ratio: 9 / 16; border: 8px solid #202a30; border-radius: 34px; transform: rotate(-8deg) translateY(1%); }
 .device-phone::before { content: ""; position: absolute; top: 5px; left: 37%; z-index: 1; width: 26%; height: 8px; border-radius: 8px; background: #202a30; }
 .project-card:hover .device { transform: rotate(0) translateY(-3%) scale(1.025); box-shadow: 0 30px 44px #17232330; }
 .preview-note { position: absolute; bottom: 16px; left: 20px; color: #64706b; font-size: 10px; letter-spacing: .02em; }
-.preview-device { width: 77%; height: 60%; overflow: hidden; border: 1px solid #dedfe2; border-radius: 11px; background: #fff; box-shadow: 0 25px 35px #0000001f, 0 3px 8px #00000012; transform: rotate(-6deg) translateY(10px); transition: transform .4s ease, box-shadow .4s ease; }
-.project-card:nth-child(3n + 2) .preview-device { transform: rotate(5deg) translateY(9px); }
-.project-card:hover .preview-device { transform: rotate(0) translateY(0) scale(1.035); box-shadow: 0 30px 45px #00000020; }
-.preview-bar { display: flex; align-items: center; gap: 4px; height: 22px; padding-inline: 9px; border-bottom: 1px solid #f0f0f0; }
-.preview-bar span { width: 4px; height: 4px; border-radius: 50%; background: #c6c6c6; }
-.preview-layout { display: grid; grid-template-columns: 25% 1fr; height: calc(100% - 22px); }
-.preview-sidebar { display: flex; flex-direction: column; gap: 9px; padding: 16px 8px; background: color-mix(in srgb, var(--accent) 9%, white); }
-.preview-sidebar span { height: 5px; border-radius: 10px; background: color-mix(in srgb, var(--accent) 18%, white); }
-.preview-sidebar span:first-child { width: 65%; height: 10px; margin-bottom: 8px; background: var(--accent); }
-.preview-sidebar span:nth-child(3) { width: 72%; }
-.preview-content { min-width: 0; padding: 19px 18px; }
-.preview-content strong { display: -webkit-box; overflow: hidden; max-width: 100%; min-height: 29px; margin-bottom: 10px; color: #2e3336; font-size: clamp(9px, .9vw, 12px); font-weight: 600; letter-spacing: -.045em; line-height: 1.25; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
-.preview-content > span { display: block; width: 82%; height: 5px; margin-bottom: 7px; border-radius: 8px; background: #e4e6e7; }
-.preview-content > span:nth-of-type(2) { width: 56%; }
-.preview-panels { display: flex; gap: 7px; margin-top: 18px; }
-.preview-panels i { width: 33%; height: 45px; border-radius: 5px; background: color-mix(in srgb, var(--accent) 16%, white); }
-.preview-panels i:nth-child(2) { background: color-mix(in srgb, var(--accent) 28%, white); }
-.preview-panels i:nth-child(3) { background: color-mix(in srgb, var(--accent) 10%, white); }
-.project-card[data-project="imobiliaria"] .project-art { --accent: #668773; background: #f0f4f1; }
-.project-card[data-project="alfood"] .project-art { --accent: #bb725e; background: #f7f2f0; }
-.project-card[data-project="space"] .project-art { --accent: #415d84; background: #eff2f7; }
-.project-card[data-project="escola"] .project-art { --accent: #5f8b81; background: #f0f5f3; }
-.project-card[data-project="dados"] .project-art { --accent: #8a75a5; background: #f4f1f7; }
-.project-card[data-project="money"] .project-art { --accent: #758967; background: #f3f5f0; }
+.has-photo .preview-note { padding: 7px 10px; border-radius: 12px; background: #111b; color: #fff; }
 .project-body { padding-top: 19px; }
 .project-overline { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 12px; color: #888; font-size: 11px; }
 .project-body h3 { margin-bottom: 9px; font-size: 20px; font-weight: 500; letter-spacing: -.045em; line-height: 1.25; }
@@ -168,7 +146,6 @@ h1 { max-width: 930px; margin-bottom: 30px; font-size: clamp(58px, 6.3vw, 100px)
   .main-nav a { padding: 12px 0; font-size: 16px; }
   .hero-grid { display: flex; flex-direction: column; align-items: stretch; gap: 40px; min-height: 0; padding-block: 66px 84px; }
   h1 { font-size: clamp(52px, 10vw, 78px); }
-  .hero-mark { align-self: flex-start; width: min(100%, 480px); max-width: 480px; }
   .section { padding-block: 82px; }
   .projects-section { padding-top: 20px; }
   .section-heading { display: block; }
@@ -183,13 +160,11 @@ h1 { max-width: 930px; margin-bottom: 30px; font-size: clamp(58px, 6.3vw, 100px)
   .hero-grid { padding-block: 54px 74px; }
   h1 { font-size: clamp(46px, 11vw, 64px); }
   .hero-lead { font-size: 15px; }
-  .hero-mark { width: min(100%, 420px); min-height: 280px; }
   .section-heading h2 { font-size: clamp(72px, 20vw, 110px); }
   .filter-bar { gap: 17px; }
   .filter-bar button { font-size: 12px; }
   .project-grid { grid-template-columns: 1fr; gap: 50px; }
   .project-art { border-radius: 24px; }
-  .preview-content strong { font-size: 13px; }
   .project-body > p { min-height: 0; }
   .timeline-item { grid-template-columns: 1fr; gap: 10px; }
   .research-strip { display: block; }

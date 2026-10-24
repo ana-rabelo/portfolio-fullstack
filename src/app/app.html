@@ -27,7 +27,6 @@
           <a class="inline-link" href="mailto:prabelo79@gmail.com">Vamos conversar <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-      <div class="hero-mark" aria-hidden="true"><span>AP.</span><small>Projetos com propósito<br />e atenção aos detalhes.</small></div>
     </div>
   </section>
 
@@ -45,21 +44,15 @@
       <div class="project-grid" aria-live="polite">
         @for (project of visibleProjects(); track project.id; let i = $index) {
           <article class="project-card" [attr.data-project]="project.id" animate.enter="card-enter">
-            <div class="project-art" [class.has-preview]="project.preview" [attr.aria-label]="project.preview ? 'Ilustração conceitual de ' + project.title : null" [attr.role]="project.preview ? 'img' : null" [attr.aria-hidden]="project.preview ? null : true">
-              @if (project.preview) {
+            <div class="project-art has-preview" [class.has-photo]="!project.device">
+              @if (project.device) {
                 <div class="device" [class.device-desktop]="project.device === 'desktop'" [class.device-tablet]="project.device === 'tablet'" [class.device-phone]="project.device === 'phone'">
-                  <img [src]="project.preview" alt="" loading="lazy" width="960" height="600" />
+                  <img [src]="project.preview" [alt]="project.previewAlt" loading="lazy" width="960" height="600" />
                 </div>
-                <span class="preview-note">Prévia conceitual</span>
               } @else {
-                <div class="preview-device" aria-hidden="true">
-                  <div class="preview-bar"><span></span><span></span><span></span></div>
-                  <div class="preview-layout">
-                    <div class="preview-sidebar"><span></span><span></span><span></span><span></span></div>
-                    <div class="preview-content"><strong>{{ project.title }}</strong><span></span><span></span><div class="preview-panels"><i></i><i></i><i></i></div></div>
-                  </div>
-                </div>
+                <img class="project-photo" [src]="project.preview" [alt]="project.previewAlt" loading="lazy" width="960" height="600" />
               }
+              <span class="preview-note">{{ project.device ? (project.id === 'legislativo' ? 'Captura do sistema' : 'Prévia adaptada') : 'Imagem ilustrativa' }}</span>
             </div>
             <div class="project-body">
               <div class="project-overline"><span>{{ project.status === 'production' ? 'Em produção' : project.category }}</span><span>{{ ('0' + (i + 1)).slice(-2) }}</span></div>

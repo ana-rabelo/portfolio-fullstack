@@ -10,7 +10,8 @@ export interface Project {
   url?: string;
   private?: boolean;
   status?: 'production' | 'case-study';
-  preview?: string;
+  preview: string;
+  previewAlt: string;
   device?: 'desktop' | 'tablet' | 'phone';
 }
 
@@ -23,7 +24,8 @@ export const projects: Project[] = [
     tags: ['Gestão legislativa', 'Portal web'],
     url: 'https://alemalegis.al.ma.leg.br/',
     status: 'production',
-    preview: 'previews/legislativo.svg',
+    preview: 'previews/legislativo.png',
+    previewAlt: 'Captura do painel do Sistema de Apoio Legislativo, sem logotipo institucional',
     device: 'desktop'
   },
   {
@@ -35,6 +37,7 @@ export const projects: Project[] = [
     private: true,
     status: 'production',
     preview: 'previews/diarias.png',
+    previewAlt: 'Prévia anonimizada do Sistema de Diárias',
     device: 'tablet'
   },
   {
@@ -45,7 +48,8 @@ export const projects: Project[] = [
     tags: ['Jornada', 'Gestão de pessoas'],
     private: true,
     status: 'production',
-    preview: 'previews/ponto.png',
+    preview: 'previews/ponto-mobile.png',
+    previewAlt: 'Adaptação para celular da tela do Sistema de Ponto Eletrônico',
     device: 'phone'
   },
   {
@@ -55,7 +59,9 @@ export const projects: Project[] = [
     description: 'Estudo acadêmico de evolução de um sistema monolítico para serviços de avaliações, produtos e votos, explorando CQRS, eventos e mensageria.',
     tags: ['Java', 'Spring Boot', 'CQRS', 'RabbitMQ'],
     private: true,
-    status: 'case-study'
+    status: 'case-study',
+    preview: 'previews/insis.jpg',
+    previewAlt: 'Imagem ilustrativa de código em um notebook'
   },
   {
     id: 'imobiliaria',
@@ -63,7 +69,9 @@ export const projects: Project[] = [
     category: 'APIs',
     description: 'API de imóveis com validações, paginação e filtros dinâmicos construídos com JPA Criteria.',
     tags: ['Java', 'Spring Boot', 'JPA'],
-    url: 'https://github.com/ana-rabelo/imobiliaria-api'
+    url: 'https://github.com/ana-rabelo/imobiliaria-api',
+    preview: 'previews/imobiliaria.jpg',
+    previewAlt: 'Imagem ilustrativa de edifício residencial'
   },
   {
     id: 'alfood',
@@ -71,7 +79,9 @@ export const projects: Project[] = [
     category: 'Web',
     description: 'Interface de restaurante e cardápio com componentes React, TypeScript e integração com API.',
     tags: ['React', 'TypeScript', 'API'],
-    url: 'https://github.com/ana-rabelo/alfood'
+    url: 'https://github.com/ana-rabelo/alfood',
+    preview: 'previews/alfood.jpg',
+    previewAlt: 'Imagem ilustrativa de pizza em uma mesa'
   },
   {
     id: 'space',
@@ -79,7 +89,9 @@ export const projects: Project[] = [
     category: 'Web',
     description: 'Galeria web sobre o espaço desenvolvida em Django com conteúdo da API Astronomy Picture of the Day da NASA.',
     tags: ['Python', 'Django', 'NASA API'],
-    url: 'https://github.com/ana-rabelo/space-django'
+    url: 'https://github.com/ana-rabelo/space-django',
+    preview: 'previews/space.jpg',
+    previewAlt: 'Fotografia ilustrativa de uma galáxia'
   },
   {
     id: 'escola',
@@ -87,7 +99,9 @@ export const projects: Project[] = [
     category: 'APIs',
     description: 'API para alunos, cursos e matrículas com Django REST Framework.',
     tags: ['Python', 'Django REST', 'API'],
-    url: 'https://github.com/ana-rabelo/drf-escola'
+    url: 'https://github.com/ana-rabelo/drf-escola',
+    preview: 'previews/escola.jpg',
+    previewAlt: 'Imagem ilustrativa de livros abertos sobre uma mesa'
   },
   {
     id: 'dados',
@@ -95,7 +109,9 @@ export const projects: Project[] = [
     category: 'Dados',
     description: 'Desafio de ciência de dados com análise exploratória e regressão linear para estimar valores de aluguel.',
     tags: ['Python', 'Jupyter', 'Machine Learning'],
-    url: 'https://github.com/ana-rabelo/LH_CD_ANA_PAULA'
+    url: 'https://github.com/ana-rabelo/LH_CD_ANA_PAULA',
+    preview: 'previews/dados.jpg',
+    previewAlt: 'Imagem ilustrativa de gráficos e indicadores de dados'
   },
   {
     id: 'money',
@@ -103,7 +119,9 @@ export const projects: Project[] = [
     category: 'APIs',
     description: 'Conversor de moedas em Java que consulta cotações em uma API externa.',
     tags: ['Java 21', 'API', 'CLI'],
-    url: 'https://github.com/ana-rabelo/money-morph'
+    url: 'https://github.com/ana-rabelo/money-morph',
+    preview: 'previews/money.jpg',
+    previewAlt: 'Imagem ilustrativa de notas de dólar e euro'
   }
 ];
 
