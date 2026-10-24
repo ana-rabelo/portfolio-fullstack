@@ -60,8 +60,8 @@ export const projects: Project[] = [
     tags: ['Java', 'Spring Boot', 'CQRS', 'RabbitMQ'],
     private: true,
     status: 'case-study',
-    preview: 'previews/insis.jpg',
-    previewAlt: 'Imagem ilustrativa de código em um notebook'
+    preview: 'previews/a68576-puzzle.webp',
+    previewAlt: 'Peça de quebra-cabeça isométrica em 3D'
   },
   {
     id: 'imobiliaria',
@@ -70,8 +70,8 @@ export const projects: Project[] = [
     description: 'API de imóveis com validações, paginação e filtros dinâmicos construídos com JPA Criteria.',
     tags: ['Java', 'Spring Boot', 'JPA'],
     url: 'https://github.com/ana-rabelo/imobiliaria-api',
-    preview: 'previews/imobiliaria.jpg',
-    previewAlt: 'Imagem ilustrativa de edifício residencial'
+    preview: 'previews/1858b9-map-pin.webp',
+    previewAlt: 'Marcador de localização isométrico em 3D'
   },
   {
     id: 'alfood',
@@ -80,8 +80,8 @@ export const projects: Project[] = [
     description: 'Interface de restaurante e cardápio com componentes React, TypeScript e integração com API.',
     tags: ['React', 'TypeScript', 'API'],
     url: 'https://github.com/ana-rabelo/alfood',
-    preview: 'previews/alfood.jpg',
-    previewAlt: 'Imagem ilustrativa de pizza em uma mesa'
+    preview: 'previews/abab3a-takeway-cup.webp',
+    previewAlt: 'Copo para viagem isométrico em 3D'
   },
   {
     id: 'space',
@@ -90,8 +90,8 @@ export const projects: Project[] = [
     description: 'Galeria web sobre o espaço desenvolvida em Django com conteúdo da API Astronomy Picture of the Day da NASA.',
     tags: ['Python', 'Django', 'NASA API'],
     url: 'https://github.com/ana-rabelo/space-django',
-    preview: 'previews/space.jpg',
-    previewAlt: 'Fotografia ilustrativa de uma galáxia'
+    preview: 'previews/744cc0-rocket.webp',
+    previewAlt: 'Foguete isométrico em 3D'
   },
   {
     id: 'escola',
@@ -100,8 +100,8 @@ export const projects: Project[] = [
     description: 'API para alunos, cursos e matrículas com Django REST Framework.',
     tags: ['Python', 'Django REST', 'API'],
     url: 'https://github.com/ana-rabelo/drf-escola',
-    preview: 'previews/escola.jpg',
-    previewAlt: 'Imagem ilustrativa de livros abertos sobre uma mesa'
+    preview: 'previews/628100-notebook.webp',
+    previewAlt: 'Caderno isométrico em 3D'
   },
   {
     id: 'dados',
@@ -110,8 +110,8 @@ export const projects: Project[] = [
     description: 'Desafio de ciência de dados com análise exploratória e regressão linear para estimar valores de aluguel.',
     tags: ['Python', 'Jupyter', 'Machine Learning'],
     url: 'https://github.com/ana-rabelo/LH_CD_ANA_PAULA',
-    preview: 'previews/dados.jpg',
-    previewAlt: 'Imagem ilustrativa de gráficos e indicadores de dados'
+    preview: 'previews/4a4275-chart.webp',
+    previewAlt: 'Gráfico isométrico em 3D'
   },
   {
     id: 'money',
@@ -120,11 +120,19 @@ export const projects: Project[] = [
     description: 'Conversor de moedas em Java que consulta cotações em uma API externa.',
     tags: ['Java 21', 'API', 'CLI'],
     url: 'https://github.com/ana-rabelo/money-morph',
-    preview: 'previews/money.jpg',
-    previewAlt: 'Imagem ilustrativa de notas de dólar e euro'
+    preview: 'previews/7d956f-wallet.webp',
+    previewAlt: 'Carteira isométrica em 3D'
   }
 ];
 
 export function filterProjects(items: Project[], category: ProjectFilter): Project[] {
   return category === 'Todos' ? items : items.filter((project) => project.category === category);
+}
+
+export function partitionProjects(items: Project[], category: ProjectFilter): { production: Project[]; other: Project[] } {
+  const filtered = filterProjects(items, category);
+  return {
+    production: filtered.filter((project) => project.status === 'production'),
+    other: filtered.filter((project) => project.status !== 'production')
+  };
 }
